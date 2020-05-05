@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             _poster(),
-          //  _botones(context),
+            _botones(context),
             
           ],
         ),
@@ -25,10 +25,7 @@ class HomePage extends StatelessWidget {
     return Container(
       color: Colors.lightBlueAccent,
       padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
-      
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        
         children: <Widget>[
           _creaTexto(context),
         //  _creaBotones(),
@@ -40,11 +37,16 @@ class HomePage extends StatelessWidget {
   Widget _creaTexto(context) {
     return Row(
       children: <Widget>[
-        Column(children: <Widget>[
-          Text('Oesddfd Lake Campground', style: Theme.of(context).textTheme.title,),
-          Text('kandessss, Switere', style: Theme.of(context).textTheme.subhead,),
-        ],),
-        Icon(Icons.star)
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Oesddfd Lake Campground', style: Theme.of(context).textTheme.title,),
+            Text('kandessss, Switere', style: Theme.of(context).textTheme.subhead,),
+          ],
+        ),
+        SizedBox(width: 40.0,),
+        Icon(Icons.star, color: Colors.red,),
+        Text('41')
       ],
     );
   }
