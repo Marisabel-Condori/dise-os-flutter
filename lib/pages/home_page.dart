@@ -23,12 +23,12 @@ class HomePage extends StatelessWidget {
 
   Widget _botones(context) {
     return Container(
-      color: Colors.lightBlueAccent,
-      padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+      padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 15.0),
       child: Column(
         children: <Widget>[
           _creaTexto(context),
-        //  _creaBotones(),
+          SizedBox(height: 15.0,),
+          _creaBotones(),
           ],
         ),
     );
@@ -47,6 +47,34 @@ class HomePage extends StatelessWidget {
         SizedBox(width: 40.0,),
         Icon(Icons.star, color: Colors.red,),
         Text('41')
+      ],
+    );
+  }
+
+  Widget _creaBotones() {
+    return Row(
+      children: <Widget>[
+        SizedBox(width: 40.0,),
+        Column(
+          children: <Widget>[
+            IconButton(color: Colors.lightBlue,icon: Icon(Icons.call), onPressed: (){}),
+            Text('CALL')
+          ],
+        ),
+        SizedBox(width: 50.0,),
+        Column(
+          children: <Widget>[
+            IconButton(color: Colors.lightBlue,icon: Icon(Icons.near_me), onPressed: (){}),
+            Text('ROUTE')
+          ],
+        ),
+        SizedBox(width: 50.0,),
+        Column(
+          children: <Widget>[
+            IconButton(color: Colors.lightBlue,icon: Icon(Icons.share), onPressed: (){}),
+            Text('SHARE')
+          ],
+        ),
       ],
     );
   }
