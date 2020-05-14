@@ -1,4 +1,5 @@
 import 'package:disenio_fluter1/pages/home_page.dart';
+import 'package:disenio_fluter1/pages/scroll_page.dart';
 import 'package:flutter/material.dart';
 
  
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'diseño1',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: 'scroll',
       routes: {
         '/' : (BuildContext context) => HomePage(),
+        'scroll' : (BuildContext context) => ScrollPage(),
       },
     );
   }
