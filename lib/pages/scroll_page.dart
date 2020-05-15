@@ -18,9 +18,17 @@ class ScrollPage extends StatelessWidget {
   Widget _pagina1() {
     return Stack(
       children: <Widget>[
+        _colorFondo(),
         _img(),
         _textos()
       ],
+    );
+  }
+  Widget _colorFondo() {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Color.fromRGBO(108, 192, 218, 1.0),
     );
   }
   Widget _img() {
@@ -50,7 +58,24 @@ class ScrollPage extends StatelessWidget {
 
 
   Widget _pagina2() {
-    return Center(child: Text(':***'));
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Color.fromRGBO(108, 192, 218, 1.0),
+      child: Center(
+        child: RaisedButton(
+          onPressed: (){},
+          shape: StadiumBorder(),
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: Text('Bienvenidos')
+            ),
+         
+          ),
+        ),
+    );
   }
 
   
