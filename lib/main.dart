@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
+import 'package:disenio_fluter1/pages/botones_page.dart';
 import 'package:disenio_fluter1/pages/home_page.dart';
 import 'package:disenio_fluter1/pages/scroll_page.dart';
-import 'package:flutter/material.dart';
 
  
 void main() => runApp(MyApp());
@@ -10,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'diseño1',
+      title: 'diseños',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'scroll',
+      initialRoute: 'botones',
       routes: {
         '/' : (BuildContext context) => HomePage(),
         'scroll' : (BuildContext context) => ScrollPage(),
+        'botones' : (BuildContext context) => BotonesPage(),
       },
     );
   }
