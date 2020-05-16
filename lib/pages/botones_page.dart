@@ -13,6 +13,7 @@ class BotonesPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 _titulos(),
+                _botonRedondo()
               ],
             ),
           ),
@@ -85,7 +86,6 @@ class BotonesPage extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.copyWith(
           caption: TextStyle(color: Color.fromRGBO(116, 117, 152, 1.0))
         )
-
       ), 
       child: BottomNavigationBar(
         items: [
@@ -102,6 +102,60 @@ class BotonesPage extends StatelessWidget {
             title: Container()
           ),
         ] 
+      )
+    );
+  }
+
+  Widget _botonRedondo(){
+    return Table(
+      children: [
+        TableRow(
+          children: [
+            _crearBoton(),
+            _crearBoton(),
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBoton(),
+            _crearBoton(),
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBoton(),
+            _crearBoton(),
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBoton(),
+            _crearBoton(),
+          ]
+        )
+      ],
+    );
+  }
+
+  Widget _crearBoton() {
+    return Container(
+      height: 150.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.7),
+        borderRadius: BorderRadius.circular(20.0)
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          CircleAvatar(
+            backgroundColor: Colors.pinkAccent,
+            radius: 30.0, 
+            child: Icon(Icons.fastfood, color: Colors.white, size: 35.0,),  
+          ),
+          SizedBox(height: 10.0,),
+          Text('aaa', style: TextStyle(color: Colors.pinkAccent),),
+        ],
       )
     );
   }
