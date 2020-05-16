@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -52,13 +53,13 @@ class BotonesPage extends StatelessWidget {
       ),
     );
     return Stack(
-      children: <Widget>[
-        gradiente, 
-        Positioned(
-          top: -100,
-          child: caja
-        )
-      ],
+        children: <Widget>[
+          gradiente, 
+          Positioned(
+            top: -100,
+            child: caja
+          )
+        ],
     );
   }
 
@@ -139,24 +140,31 @@ class BotonesPage extends StatelessWidget {
 
   Widget _crearBoton() {
     return Container(
-      height: 150.0,
       margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(62, 66, 107, 0.7),
-        borderRadius: BorderRadius.circular(20.0)
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          CircleAvatar(
-            backgroundColor: Colors.pinkAccent,
-            radius: 30.0, 
-            child: Icon(Icons.fastfood, color: Colors.white, size: 35.0,),  
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: Container(
+              height: 150.0,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(62, 66, 107, 0.7),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: Colors.pinkAccent,
+                    radius: 30.0, 
+                    child: Icon(Icons.fastfood, color: Colors.white, size: 35.0,),  
+                  ),
+                  SizedBox(height: 10.0,),
+                  Text('hola', style: TextStyle(color: Colors.pinkAccent),),
+                ],
+              )
           ),
-          SizedBox(height: 10.0,),
-          Text('aaa', style: TextStyle(color: Colors.pinkAccent),),
-        ],
-      )
+        ),
+      ),
     );
   }
 }
