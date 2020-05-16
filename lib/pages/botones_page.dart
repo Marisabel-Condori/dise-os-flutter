@@ -112,33 +112,33 @@ class BotonesPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBoton(),
-            _crearBoton(),
+            _crearBoton(Colors.pinkAccent, Icons.fastfood, 'comida'),
+            _crearBoton(Colors.blue, Icons.radio, 'radio'),
           ]
         ),
         TableRow(
           children: [
-            _crearBoton(),
-            _crearBoton(),
+            _crearBoton(Colors.orange, Icons.open_with, 'open'),
+            _crearBoton(Colors.blueGrey, Icons.backup, 'nube'),
           ]
         ),
         TableRow(
           children: [
-            _crearBoton(),
-            _crearBoton(),
+            _crearBoton(Colors.red, Icons.fastfood, 'comida'),
+            _crearBoton(Colors.purple, Icons.fastfood, 'comida'),
           ]
         ),
         TableRow(
           children: [
-            _crearBoton(),
-            _crearBoton(),
+            _crearBoton(Colors.lightGreen, Icons.fastfood, 'comida'),
+            _crearBoton(Colors.amber, Icons.fastfood, 'comida'),
           ]
         )
       ],
     );
   }
 
-  Widget _crearBoton() {
+  Widget _crearBoton( Color color, IconData icono, String texto) {
     return Container(
       margin: EdgeInsets.all(15.0),
       child: ClipRRect(
@@ -154,12 +154,12 @@ class BotonesPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundColor: Colors.pinkAccent,
+                    backgroundColor: color,
                     radius: 30.0, 
-                    child: Icon(Icons.fastfood, color: Colors.white, size: 35.0,),  
+                    child: Icon(icono, color: Colors.white, size: 35.0,),  
                   ),
                   SizedBox(height: 10.0,),
-                  Text('hola', style: TextStyle(color: Colors.pinkAccent),),
+                  Text(texto, style: TextStyle(color: Colors.pinkAccent),),
                 ],
               )
           ),
